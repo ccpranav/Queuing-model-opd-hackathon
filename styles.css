@@ -1,0 +1,157 @@
+.navbar-brand:hover {
+    /* background-color: rgb(52, 152, 219); */
+    background-color: rgb(231, 165, 176, 0.9);
+
+}
+
+.navbar-item {
+    --bulma-navbar-item-img-max-height: none;
+    /* Remove the max-height restriction */
+    color: white !important;
+}
+
+.navbar-link {
+    color: white !important;
+
+    &:hover {
+        background-color: rgb(129, 185, 222);
+        color: rgb(231, 165, 176, 0.9);
+        /* background-color: rgb(231, 165, 176, 0.9); */
+        background-color: rgba(227, 188, 195, 0.629);
+
+
+    }
+}
+
+.nonSideItem:hover {
+    color: white !important;
+    background-color: rgb(129, 185, 222);
+    background-color: rgba(227, 188, 195, 0.629);
+
+}
+
+.sideButtons:hover {
+    /* background-color: rgb(52, 152, 219); */
+    /* background-color: rgb(231, 165, 176, 0.9);
+    background-color: rgb(231, 165, 176, 0.9); */
+
+
+}
+
+.dropdowns {
+    color: black !important;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.navbar-logo {
+    height: 70px !important;
+    width: auto !important;
+
+}
+
+.logoo:hover {
+    background-color: rgb(231, 165, 176, 0.9);
+}
+
+.navbar-custom {
+    /* background-color: rgb(35, 97, 154); */
+    background-color: rgb(52, 152, 219, 0.7);
+    background-color: rgb(231, 165, 176, 0.7);
+
+    &:hover {
+        /* background-color: rgb(52, 152, 219, 0.9); */
+        background-color: rgb(231, 165, 176, 0.9);
+
+        transition: ease-in 0.1s;
+    }
+}
+
+/* Ensure the form container takes up full width within its column */
+.picclass {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.myImage {
+    max-width: 80%;
+    max-height: 80%;
+
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+body {
+    overflow: hidden;
+}
+
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px);
+
+    z-index: -1;
+    /* to ensure the blur effect is behind content */
+}
+
+/* Overlay with black transparency */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background: rgba(0, 0, 0, 0.5); */
+    /* Black overlay with 50% opacity */
+    z-index: -1;
+}
+
+body * {
+    position: relative;
+    z-index: 1;
+}
+
+.formtexttochange {
+    color: rgb(61, 2, 54);
+}
+
+.imagee {
+    background: rgba(0, 0, 0, 0.919);
+
+}
+
+.columns .column.is-two-thirds {
+    flex-basis: auto;
+    max-width: 60%;
+}
+
+.columns .column.is-one-third {
+    flex-grow: 1;
+}
+
+.myArticle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disappearingCard {
+    display: none;
+}

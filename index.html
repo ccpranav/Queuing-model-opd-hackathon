@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Surgeons</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-custom" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item logoo">
+                <img src="https://medprax.in/images/hosp.png" alt="Hospital Management System Logo" class="navbar-logo">
+
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item nonSideItem">
+                    Home
+                </a>
+
+                <a class="navbar-item nonSideItem">
+                    Patient Details
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable nonSideItem">
+                    <a class="navbar-link">
+                        More
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item dropdowns nonSideItem">
+                            Available Beds
+                        </a>
+                        <a class="navbar-item is-selected nonSideItem">
+                            Blood Donation
+                        </a>
+                        <a class="navbar-item dropdowns nonSideItem">
+                            Contact
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item dropdowns nonSideItem">
+                            Report an issue
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item sideButtons">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Patient Registration</strong>
+                        </a>
+                        <a class="button is-light">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Navbar Over,Heading Starts -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title formtexttochange">
+                Bed Availability Check
+            </h1>
+            <!-- <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p> -->
+
+            <!-- Heading Over -->
+
+            <!-- Form and Picture -->
+            <div class="columns">
+                <!-- Form alone -->
+                <div class="column is-two-thirds">
+                    <form action="/send" id="registrationForm" method="POST">
+                        <div class="columns">
+                            <div class="column is-half">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label class="label formtexttochange">Name</label>
+                                            <div class="control">
+                                                <input id="name" class="input" type="text"
+                                                    placeholder="Enter your name.." name="userName" required>
+                                            </div>
+                                            <!-- <span id="nameError" class="error-message">Required field</span> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="column">
+                                        <div class="field">
+                                            <label class="label formtexttochange">Age</label>
+                                            <div class="control">
+                                                <input id="age" type="text" class="input" placeholder="Enter your age"
+                                                    name="age" required>
+                                            </div>
+                                            <!-- <span id="ageError" class="error-message">Required field</span> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label formtexttochange">City / State</label>
+                                    <div class="control">
+                                        <div class="select formtexttochange">
+                                            <select>
+                                                <option>Select dropdown</option>
+                                                <option>Chennai</option>
+                                                <option>Delhi</option>
+                                                <option>Mumbai</option>
+                                                <option>Hyderabad</option>
+                                                <option>Banglore</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- <span id="subjectError" class="error-message">Required field</span> -->
+                                </div>
+
+                                <div class="field">
+                                    <label class="label formtexttochange">Medical Emergency</label>
+                                    <div class="control">
+                                        <textarea id="medicalCondition" class="textarea"
+                                            placeholder="Enter your medical condition" required></textarea>
+                                    </div>
+                                    <!-- <span id="medicalConditionError" class="error-message">Required field</span> -->
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox formtexttochange">
+                                            <input id="terms" type="checkbox" required class="formtexttochange">
+                                            I agree to the <a
+                                                href="https://simshospitals.com/terms-and-conditions/">terms and
+                                                conditions</a>
+                                        </label>
+                                    </div>
+                                    <!-- <span id="termsError" class="error-message">Required field</span> -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-grouped">
+                            <div class="control">
+                                <button id="submitButton" class="button is-link" type="submit">Submit</button>
+                            </div>
+                            <!-- <div class="control">
+                        <button class="button is-link is-light">Cancel</button>
+                    </div> -->
+                        </div>
+                    </form>
+                </div>
+                <!-- Form over -->
+                <div class="column is-one-fifth myArticle" id="myArticle">
+                    <article class="message is-danger">
+                        <div class="message-header">
+                            <p class="message-ki-heading"></p>
+                            <button class="delete" aria-label="delete"></button>
+                        </div>
+                        <div class="message-body">
+
+                        </div>
+                    </article>
+                </div>
+                <!-- Picture Alone -->
+                <div class="column is-one-quarter picclass">
+                    <div class="image-container">
+                        <figure class="image myImage">
+                            <img class="image is-rounded"
+                                src="https://images.pexels.com/photos/6098057/pexels-photo-6098057.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                class="imagee" />
+
+                            <p class="description"></p>
+                        </figure>
+                        <!-- <img src="https://images.pexels.com/photos/2678059/pexels-photo-2678059.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Description of the image" class="image">
+                        <p class="description">This is a description of the image. Add any text you want here.</p> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
